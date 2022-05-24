@@ -8,8 +8,14 @@ print(image)
 # the binary conversion of the image as a list of binary values
 binary = []
 
+length = (len(image) * 3 - 1)// 8
+
 # the message to be encoded
-message = "Ron"
+message = str(input("Please enter a message to be encoded. With the current image this cannot be longer than " + str(length) + " characters\n"))
+
+while len(message) > length:
+    print("Your submitted message is longer than the excepted " + str(length) + " characters. Please enter another which meets our requirements")
+    message = str(input("Please enter a message to be encoded. With the current image this cannot be longer than " + str(length) + " characters\n"))
 
 # for all the sets of "RGB" in the image
 for i in range(len(image)):
