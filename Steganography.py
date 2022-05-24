@@ -83,4 +83,6 @@ for i in range(len(binary)):
 n = 3
 binary = [binary[i:i+n] for i in range(0, len(binary), n)]
 
+binary[-1][2] = len(message)
+
 print(binary)
