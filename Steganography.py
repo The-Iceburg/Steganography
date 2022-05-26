@@ -2,7 +2,7 @@ from PIL import Image
 import numpy as np
 
 
-menuChoice = input("1: Encode\n2: Decode\n")
+menuChoice = input("##############################################\nPlease select your option from the list below:\n1. Encode\n2. Decode\n##############################################\n")
 
 if menuChoice == "1":
     imageORIGINAL = "joel.png"
@@ -20,16 +20,14 @@ if menuChoice == "1":
             listpixel = list(image_rgb.getpixel((j,i)))
             values.append(listpixel)
 
-
     # Load all pixels from the image.
     orig_pixel_map = image.load()
 
     # Create a new image matching the original image's color mode, and size.
-    #   Load all the pixels from this new image as well.
+    # Load all the pixels from this new image as well.
     new_image = Image.new("RGB", (w, h))
     new_pixel_map = new_image.load()
             
-
     # the binary conversion of the image as a list of binary values
     binary = []
 
@@ -113,12 +111,9 @@ if menuChoice == "1":
     n = 3
     binary = [binary[i:i+n] for i in range(0, len(binary), n)]
 
-
     x = 0
     y = 0
-    
-    
-    
+
     for length1 in range(0, len(binary)):
         if (x + 1) == w:
             new_r = binary[length1][0]
@@ -128,7 +123,6 @@ if menuChoice == "1":
             new_pixel_map[x, y] = new_pixel
             y += 1
             x = 0
-
         else:
             new_r = binary[length1][0]
             new_g = binary[length1][1]
@@ -136,20 +130,12 @@ if menuChoice == "1":
             new_pixel = (new_r, new_g, new_b)
             new_pixel_map[x, y] = new_pixel
             x += 1
-
         binary[-1][2] = len(message)
-    print(binary[-1][2])
-    # f = open("Binary Values.txt", "a")
-    # f.write(str(binary))
-    # f.close()
 
     new_image.show()
 
-    
     new_name = "Steganography " + imageORIGINAL
     new_image.save(new_name)
-
-
 
 elif menuChoice == "2":
     
@@ -167,16 +153,10 @@ elif menuChoice == "2":
             listpixel = list(image_rgb.getpixel((j,i)))
             image.append(listpixel)
 
-    # f = open("New Test.txt", "a")
-    # f.write(str(image))
-    # f.close()
-    # Load all pixels from the image.
     orig_pixel_map = imageS.load()
-
 
     length = image[-1][2] * 8
     binary,values = [],[]
-    print(length)
 
     for i in range(len(image)):
         
