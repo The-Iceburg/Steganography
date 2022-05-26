@@ -5,7 +5,7 @@ import numpy as np
 menuChoice = input("##############################################\nPlease select your option from the list below:\n1. Encode\n2. Decode\n##############################################\n")
 
 if menuChoice == "1":
-    imageORIGINAL = "joel.png"
+    imageORIGINAL = "Shiverian.png"
     image = Image.open(imageORIGINAL)
 
     image_array = np.array(image)
@@ -139,7 +139,7 @@ if menuChoice == "1":
 
 elif menuChoice == "2":
     
-    imageSteg = "Steganography joel.png"
+    imageSteg = "Steganography Shiverian.png"
     imageS = Image.open(imageSteg)
 
     image_array = np.array(imageS)
