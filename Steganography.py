@@ -1,5 +1,4 @@
 from PIL import Image
-import numpy as np
 
 
 menuChoice = input("##############################################\nPlease select your option from the list below:\n1. Encode\n2. Decode\n##############################################\n")
@@ -8,7 +7,6 @@ if menuChoice == "1":
     imageORIGINAL = "Shiverian.png"
     image = Image.open(imageORIGINAL)
 
-    image_array = np.array(image)
     w, h = image.size
 
     image_rgb = image.convert("RGB")
@@ -142,7 +140,6 @@ elif menuChoice == "2":
     imageSteg = "Steganography Shiverian.png"
     imageS = Image.open(imageSteg)
 
-    image_array = np.array(imageS)
     w, h = imageS.size
 
     image_rgb = imageS.convert("RGB")
